@@ -7,6 +7,7 @@
 #   ufw-before-output
 #   ufw-before-forward
 #
+
 # Don't delete these required lines, otherwise there will be errors
 *filter
 :ufw-before-input - [0:0]
@@ -76,7 +77,7 @@ COMMIT
 # NAT table rules
 *nat
 :POSTROUTING ACCEPT [0:0]
--A POSTROUTING -o eth0 -j MASQUERADE
+-A POSTROUTING -o enp0s5 -j MASQUERADE
 
 # don't delete the 'COMMIT' line or these rules won't be processed
 COMMIT
